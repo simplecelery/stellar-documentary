@@ -62,8 +62,8 @@ class jlpplugin(StellarPlayer.IStellarPlayerPlugin):
         self.max_page = '共' + str(self.pagenumbers) + '页'   
 
       
-    def loadSourceFile(self,file):
-        file = open(file, "rb")
+    def loadSourceFile(self,filename):
+        file = open(filename, "rb")
         self.allSource = json.loads(file.read())
         print(len(self.allSource))
         for item in self.allSource:
@@ -85,7 +85,7 @@ class jlpplugin(StellarPlayer.IStellarPlayerPlugin):
                 self.source.append(newitem)
         else:
             for item in self.allSource:
-                if item['name'].find(search_word) >= 0:
+                if item['name'].find(search_word) >= 0 or item['blurb'].find(search_word) >= 0:
                     newitem = {'title':item['name'],'picture':item['pic'],'info':item['blurb'],'urls':item['source']}
                     self.source.append(newitem)
         self.loadSource()
