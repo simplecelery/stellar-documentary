@@ -172,13 +172,13 @@ class jlpplugin(StellarPlayer.IStellarPlayerPlugin):
                 'height':400
             },
             {'group':
-                {'type':'grid','name':'xllist','itemlayout':xl_list_layout,'value':mediainfo['urls'],'separator':True,'itemheight':30,'itemwidth':120},
-                'height':40
+                {'type':'grid','name':'xllist','itemlayout':xl_list_layout,'value':mediainfo['urls'],'separator':True,'itemheight':30,'itemwidth':100},
+                'height':80
             },
             {'type':'space','height':5},
             {'group':
                 {'type':'grid','name':'movielist','itemlayout':movie_list_layout,'value':actmovies,'separator':True,'itemheight':30,'itemwidth':120},
-                'height':200
+                'height':120
             }
         ]
         result,control = self.doModal(mediainfo['title'],680,640,'',controls)
